@@ -32,6 +32,7 @@ export class AppComponent {
 
   public onCheckIsAllMatched(): void {
     if (this.cardService.isAllMatched(this.cardService.cardIconsArray)) {
+      window.scroll(0,0);
       this.displayWinMessage = true;
     }
   }
