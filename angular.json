@@ -21,8 +21,16 @@
             "polyfills": "apps/memory/src/polyfills.ts",
             "tsConfig": "apps/memory/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/memory/src/favicon.ico", "apps/memory/src/assets"],
-            "styles": ["apps/memory/src/styles.scss"],
+            "assets": [
+              "apps/memory/src/favicon.ico",
+              "apps/memory/src/assets"
+            ],
+            "styles": [
+              "./node_modules/font-awesome/css/font-awesome.css",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+              "apps/memory/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -81,14 +89,21 @@
               "apps/memory/tsconfig.spec.json",
               "apps/memory/tsconfig.editor.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/memory/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/memory/**/*"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
             "jestConfig": "apps/memory/jest.config.js",
-            "passWithNoTests": true
+            "passWithNoTests": true,
+            "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css"
+            ]
           }
         }
       }
@@ -114,8 +129,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/memory-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/memory-e2e/**/*"]
+            "tsConfig": [
+              "apps/memory-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/memory-e2e/**/*"
+            ]
           }
         }
       }

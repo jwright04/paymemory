@@ -1,0 +1,13 @@
+<div class="card" [ngClass]="card.matched || card.selected ? '-disable-pointer' : ''">
+    <div class="card__container" (click)="checkCount(card)">
+        <div class="card__item">
+
+            <div class="card__image -back mb-3" [ngClass]="!card.selected && !card.matched ? '-back' :'-front' ">
+                <i class="card__icon fa {{!card.selected && !card.matched? 'fa-power-off' : card.cardId}} "></i>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="isDebug" class="mb-4">
+        {{card.cardId}} selected: {{card.selected}} matched: {{card.matched}}
+    </div>
+</div>
