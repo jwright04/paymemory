@@ -18,13 +18,13 @@
     display: flex;
     justify-content: center;
   }
+
   &__card-container {
     margin: 0 auto;
     width: 80%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-
   }
 
   &__button {
@@ -40,7 +40,7 @@
   &__card-item {
     flex: 1 0 20%;
     margin: 5px;
-    
+
     &.-disable-pointer {
       cursor: crosshair;
     }
@@ -51,6 +51,7 @@
     transition: opacity .25s ease-in-out;
     cursor: default;
   }
+
   &__message {
     display: flex;
     justify-content: center;

@@ -1,41 +1,43 @@
 <div class="app">
-  <section class="jumbotron text-center" *ngIf="showJumbotron">
-    <div class="container">
-      <div class="app__jumbotron"><i (click)="onCloseJumbotron()" class="fa fa-times" aria-hidden="true"></i></div>
-      <h1 class="jumbotron-heading">Game Instructions</h1>
-      <p class="lead text-muted">Click a card, it will flip over revealing its value.
-        When you click the next card, its value is revealed and then compared against the other face up card. If they are equal, both cards disappear. If they are different, the cards will flip back down.  Give it a try!</p>
+    <section class="jumbotron text-center" *ngIf="showJumbotron">
+        <div class="container">
+            <div class="app__jumbotron">
+                <i (click)="onCloseJumbotron()" class="fa fa-times" aria-hidden="true"></i>
+            </div>
+            <h1 class="jumbotron-heading">Game Instructions</h1>
+            <p class="lead text-muted">Click a card, it will flip over revealing its value.
+                When you click the next card, its value is revealed and then compared against the other face up card. If they are equal, both cards disappear. If they are different, the cards will flip back down. Give it a try!
+            </p>
+        </div>
+    </section>
+    <div *ngIf="displayWinMessage" class="app__message mb-5 mt-5">
+        <h2>Congratulations, You Won!</h2>
     </div>
-  </section>
-  <div *ngIf="displayWinMessage" class="app__message mb-5 mt-5">
-    <h2>Congratulations, You Won!</h2>
-  </div>
 
-  <div class="app__start-button" *ngIf="displayWinMessage">
-    <button type="button" class="app__button btn btn-primary" (click)="onResetGame()">Reset</button>
-  </div>
-
-  <div class="app__loader-container mt-5 mb-5">
-    <div class="loader" role="status" *ngIf="isDisabled"></div>
-  </div>
-
-  <div class="app__card-container">
-    <div *ngFor="let card of shuffledArray" class="app__card" [ngClass]="card.matched ? 'app__card-disabled' : ''" >
-      <div class="app__card-item">
-        <memory-nx-card
-            [isDebug]="isDebug"
-            [isMatched]="card.matched"
-            [card]="card"
-            [isDisabled]="isDisabled"
-            (disabled)="onDisabled($event)"
-            (selected)="onSelected($event)"
-            (resetCards)="onResetCards()"
-            (checkPair)="onCheckPair($event)"
-        >
-        </memory-nx-card>
-      </div>
+    <div class="app__start-button" *ngIf="displayWinMessage">
+        <button type="button" class="app__button btn btn-primary" (click)="onResetGame()">Reset</button>
     </div>
-  </div>
 
+    <div class="app__loader-container mt-5 mb-5">
+        <div class="loader" role="status" *ngIf="isDisabled"></div>
+    </div>
+
+    <div class="app__card-container">
+        <div *ngFor="let card of shuffledArray" class="app__card" [ngClass]="card.matched ? 'app__card-disabled' : ''">
+            <div class="app__card-item">
+                <memory-nx-card
+                    [isDebug]="isDebug"
+                    [isMatched]="card.matched"
+                    [card]="card"
+                    [isDisabled]="isDisabled"
+                    (disabled)="onDisabled($event)"
+                    (selected)="onSelected($event)"
+                    (resetCards)="onResetCards()"
+                    (checkPair)="onCheckPair($event)"
+                >
+                </memory-nx-card>
+            </div>
+        </div>
+    </div>
 
 </div>

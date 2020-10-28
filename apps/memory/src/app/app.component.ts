@@ -5,7 +5,7 @@ import { CardIcon, CardService } from './services/card.service';
 @Component({
   selector: 'memory-nx-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
 
@@ -16,9 +16,7 @@ export class AppComponent {
   public isDisabled = false;
 
   constructor(public cardService: CardService) {
-    // set ngx to use bootstrap 4
     setTheme('bs4');
-
     this.shuffledArray = this.cardService.shuffleArray(this.cardService.cardIconsArray);
   }
 
@@ -32,7 +30,7 @@ export class AppComponent {
 
   public onCheckIsAllMatched(): void {
     if (this.cardService.isAllMatched(this.cardService.cardIconsArray)) {
-      window.scroll(0,0);
+      window.scroll(0, 0);
       this.displayWinMessage = true;
     }
   }

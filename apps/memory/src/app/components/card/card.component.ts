@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { CardService, CardIcon } from '../services/card.service';
+import { CardService, CardIcon } from '../../services/card.service';
 
 @Component({
   selector: 'memory-nx-card',
@@ -13,14 +13,13 @@ export class CardComponent {
   @Input() isMatched: boolean;
   @Input() isDisabled: boolean;
 
-
   @Output() selected = new EventEmitter<CardIcon>();
   @Output() resetCards = new EventEmitter<undefined>();
   @Output() checkPair = new EventEmitter<CardIcon[]>();
   @Output() checkIsAllMatched = new EventEmitter<undefined>();
   @Output() disabled = new EventEmitter<boolean>();
 
-  constructor(public cardService: CardService) { }
+  constructor(public cardService: CardService) {}
 
   public checkCount(card: CardIcon): void {
     if (card.selected || this.isDisabled || card.matched) {
@@ -32,7 +31,7 @@ export class CardComponent {
       this.cardService.selectedArray.push(card);
     }
 
-    if(this.cardService.selectedArray.length === 2) {
+    if (this.cardService.selectedArray.length === 2) {
       this.disabled.emit(true);
 
       setTimeout(() => {

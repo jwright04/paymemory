@@ -1,10 +1,11 @@
 .card {
   max-width: 150px;
   cursor: pointer;
+
   &.-disable-pointer {
     cursor: default;
-
   }
+
   &__container {
     display: flex;
     max-width: 150px;
@@ -12,12 +13,14 @@
     border: 2px solid #ffffff;
 
     border-radius: 5px;
-    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3 );
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
   }
+
   &__item {
     flex: 1 0 20%;
     margin: 5px;
   }
+
   &__image {
     display: flex;
     justify-content: center;
@@ -37,11 +40,12 @@
   &__disabled {
     opacity: .3;
   }
+
   &__icon {
     color: #000080;
+
     &.fa-power-off {
       color: #ffffff;
     }
-
   }
 }

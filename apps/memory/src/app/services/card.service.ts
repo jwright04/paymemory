@@ -12,124 +12,124 @@ export class CardService {
     {
       cardId: 'fa-cc-amex',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-cc-diners-club',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-cc-discover',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-cc-jcb',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-cc-mastercard',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-cc-paypal',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-cc-stripe',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-cc-visa',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-credit-card',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-credit-card-alt',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-google-wallet',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-paypal',
       selected: false,
-      matched: false,
+      matched: false
     },
 
     {
       cardId: 'fa-cc-amex',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-cc-diners-club',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-cc-discover',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-cc-jcb',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-cc-mastercard',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-cc-paypal',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-cc-stripe',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-cc-visa',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-credit-card',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-credit-card-alt',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-google-wallet',
       selected: false,
-      matched: false,
+      matched: false
     },
     {
       cardId: 'fa-paypal',
       selected: false,
-      matched: false,
-    },
+      matched: false
+    }
   ];
 
   public selectedArray: CardIcon[] = [];
@@ -168,7 +168,13 @@ export class CardService {
   public shuffleArray(array: CardIcon[]): CardIcon[] {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
+      [
+        array[i],
+        array[j]
+      ] = [
+        array[j],
+        array[i]
+      ];
     }
     return array;
   }
@@ -182,6 +188,6 @@ export class CardService {
       card.selected = false;
       card.matched = false;
       return card;
-    })
+    });
   }
 }

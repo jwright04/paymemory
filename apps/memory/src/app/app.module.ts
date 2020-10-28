@@ -8,8 +8,13 @@ import { CardService } from './services/card.service';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, CardModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    CardModule
+  ],
   providers: [CardService],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+}
